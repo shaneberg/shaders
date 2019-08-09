@@ -8,7 +8,7 @@
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
     "start": "webpack-dev-server --mode development --open",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d bin"
   },
   "repository": {
     "type": "git",
@@ -25,6 +25,7 @@
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
+    "gh-pages": "^2.1.1",
     "html-webpack-plugin": "^3.2.0",
     "webpack": "^4.39.1",
     "webpack-cli": "^3.3.6",
