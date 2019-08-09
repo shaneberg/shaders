@@ -1,4 +1,4 @@
-let THREE = require('three');
+// let THREE = require('three');
 
 function component() {
     const element = document.createElement('div');
