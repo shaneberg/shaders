@@ -13,6 +13,13 @@ module.exports = {
     "module": {
         "rules": [
             {
+                "test": /\.glsl$/,
+                "exclude": /node_modules/,
+                "use": {
+                    "loader": "webpack-glsl-loader",
+                }
+            },
+            {
                 "test": /\.js$/,
                 "exclude": /node_modules/,
                 "use": {
@@ -29,7 +36,7 @@ module.exports = {
 };
 
 // const HtmlWebpackPlugin = require('html-webpack-plugin')
-//  
+//
 //  module.exports = {
 //    entry: 'index.js',
 //      output: {
