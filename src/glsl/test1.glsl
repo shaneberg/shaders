@@ -4,8 +4,6 @@ precision mediump float;
 
 uniform float u_time;       // Time in seconds since load
 
-uniform vec2 u_resolution;
-
 uniform vec3 colorA;
 uniform vec3 colorB;
 
