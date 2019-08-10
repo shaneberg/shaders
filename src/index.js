@@ -6,8 +6,6 @@ let renderer = new THREE.WebGLRenderer();
 let shader = require('./glsl/test1.glsl');
 
 function component() {
-
-
     let padding = 10;
     renderer.setSize(window.innerWidth - padding, window.innerHeight - padding);
     return renderer.domElement;
