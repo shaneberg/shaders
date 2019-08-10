@@ -14,8 +14,8 @@ function component() {
 document.body.appendChild(component());
 
 let resolution = {
-    x: renderer.domElement.width,
-    y: renderer.domElement.height
+    x: renderer.domElement.width /2,
+    y: renderer.domElement.height /2
 };
 
 let uniforms = {
@@ -27,12 +27,8 @@ let uniforms = {
 
 uniforms.u_resolution.value = resolution;
 
-let fragmentShader = () => {
-    return shader;
-};
-
 let geometry = new THREE.BoxGeometry( 1, 1, 1 );
-let material =  new THREE.ShaderMaterial({uniforms: uniforms, fragmentShader: fragmentShader() });
+let material =  new THREE.ShaderMaterial({uniforms: uniforms, fragmentShader: shader });
 let cube = new THREE.Mesh( geometry, material );
 scene.add( cube );
 
