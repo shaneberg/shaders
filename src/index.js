@@ -13,10 +13,6 @@ function component() {
 
 document.body.appendChild(component());
 
-let resolution = {
-    x: renderer.domElement.width /2,
-    y: renderer.domElement.height /2
-};
 
 let uniforms = {
     colorB: {type: 'vec3', value: new THREE.Color(0xACB6E5)},
@@ -25,18 +21,19 @@ let uniforms = {
     u_resolution: {type: 'vec2', value: new THREE.Vector2()}
 };
 
-uniforms.u_resolution.value = resolution;
+uniforms.u_resolution.value.x = renderer.domElement.width * 0.7;
+uniforms.u_resolution.value.y = renderer.domElement.height * 0.7;
 
-let geometry = new THREE.BoxGeometry( 1, 1, 1 );
-let material =  new THREE.ShaderMaterial({uniforms: uniforms, fragmentShader: shader });
-let cube = new THREE.Mesh( geometry, material );
-scene.add( cube );
+let geometry = new THREE.PlaneGeometry();
+let material =  new THREE.ShaderMaterial({ uniforms: uniforms, fragmentShader: shader });
 
-camera.position.z = 1.3;
+let plane = new THREE.Mesh( geometry, material );
+scene.add( plane );
+
+camera.position.z = 0.7;
 
 function animate() {
-    cube.rotation.y += 0.002;
-    uniforms.u_time.value += 0.01;
+    uniforms.u_time.value += 0.05;
 
     requestAnimationFrame( animate );
     renderer.render( scene, camera );
