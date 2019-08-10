@@ -3,6 +3,8 @@ let scene = new THREE.Scene();
 let camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 let renderer = new THREE.WebGLRenderer();
 
+let shader = require('./glsl/test1.glsl');
+
 function component() {
 
 
@@ -18,21 +20,7 @@ let uniforms = {
 };
 
 let fragmentShader = () => {
-    return `
-        #ifdef GL_ES
-        precision mediump float;
-        #endif
-
-        uniform float u_time;       // Time in seconds since load
-
-        uniform vec2 u_resolution;
-
-        uniform vec3 colorA;
-        uniform vec3 colorB;
-
-        void main() {
-            gl_FragColor = vec4(colorA * mod(u_time, 1.0), 1.0);
-        }`;
+    return shader;
 };
 
 let geometry = new THREE.BoxGeometry( 1, 1, 1 );
