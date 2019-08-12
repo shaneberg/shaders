@@ -8,7 +8,9 @@ module.exports = {
         "filename": "[name].[chunkhash:8].js"
     },
     "plugins": [
-        new HtmlWebpackPlugin()
+        new HtmlWebpackPlugin({
+            template: './src/index.html',
+        })
     ],
     "module": {
         "rules": [
