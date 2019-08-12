@@ -6,10 +6,9 @@ let renderer = new THREE.WebGLRenderer();
 let vertexShader = require('./glsl/basic-vertex.glsl');
 let fragmentShader = require('./glsl/algorithmic-drawing.glsl');
 
-let padding = 200;
+let padding = 20;
 let rendererContainer = document.getElementById('renderer-container');
-// renderer.setSize(window.innerWidth - padding, window.innerHeight - padding);
-renderer.setSize(640, 480);
+renderer.setSize(window.innerWidth - padding, window.innerHeight - padding);
 rendererContainer.appendChild(renderer.domElement);
 
 let uniforms = {
