@@ -12,7 +12,7 @@ float plot(vec2 st, float t){
 }
 
 void main() {
-    vec2 st = gl_FragCoord.xy/u_resolution;
+    vec2 st = gl_FragCoord.xy/u_resolution.xy;
     float y = 0.7 + 0.5 * sin(PI * st.x + u_time);
     vec3 color = vec3(y);
     float t = plot(st, y);
