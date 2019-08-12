@@ -6,18 +6,13 @@ let renderer = new THREE.WebGLRenderer();
 let vertexShader = require('./glsl/basic-vertex.glsl');
 let fragmentShader = require('./glsl/algorithmic-drawing.glsl');
 
-function component() {
-    let padding = 10;
-    renderer.setSize(window.innerWidth - padding, window.innerHeight - padding);
-    return renderer.domElement;
-}
-
-document.body.appendChild(component());
-
+let padding = 200;
+let rendererContainer = document.getElementById('renderer-container');
+// renderer.setSize(window.innerWidth - padding, window.innerHeight - padding);
+renderer.setSize(640, 480);
+rendererContainer.appendChild(renderer.domElement);
 
 let uniforms = {
-    colorB: {type: 'vec3', value: new THREE.Color(0xACB6E5)},
-    colorA: {type: 'vec3', value: new THREE.Color(0x74ebd5)},
     u_time: {type: 'f', value: 0.0},
     u_resolution: {type: 'vec2', value: new THREE.Vector2()}
 };
