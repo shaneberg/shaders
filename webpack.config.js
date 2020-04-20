@@ -2,33 +2,36 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    "entry": "./src/index.js",
-    "output": {
-        "path": __dirname+'/bin',
-        "filename": "[name].[chunkhash:8].js"
+    entry: {
+        app: './src/index.js',
+        print: './src/index.js'
     },
-    "plugins": [
+    output: {
+        path: __dirname+'/bin',
+        filename: '[name].[contenthash].js'
+    },
+    plugins: [
         new HtmlWebpackPlugin({
-            template: './src/index.html',
+            template: './src/index.html'
         })
     ],
-    "module": {
-        "rules": [
+    module: {
+        rules: [
             {
-                "test": /\.glsl$/,
-                "exclude": /node_modules/,
-                "use": {
-                    "loader": "webpack-glsl-loader",
+                test: /\.glsl$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'webpack-glsl-loader',
                 }
             },
             {
-                "test": /\.js$/,
-                "exclude": /node_modules/,
-                "use": {
-                    "loader": "babel-loader",
-                    "options": {
-                        "presets": [
-                            "env"
+                'test': /\.js$/,
+                'exclude': /node_modules/,
+                'use': {
+                    'loader': 'babel-loader',
+                    'options': {
+                        'presets': [
+                            'env'
                         ]
                     }
                 }

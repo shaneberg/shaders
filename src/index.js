@@ -1,8 +1,22 @@
 import GlslCanvas from 'glslCanvas';
-import testFragShader from './glsl/algorithmic-drawing.glsl';
+import test from './glsl/test.glsl';
+import sine from './glsl/sine.glsl';
+
+let shaderList = [
+    { name: 'Dev Pink',  program: test },
+    { name: 'Sine Wave', program: sine }
+];
+
+let curShaderIndex = 0;
+
 let frameSize = 24;
 let canvas = document.getElementById('glsl-canvas');
 canvas.width = window.innerWidth - frameSize;
 canvas.height = window.innerHeight - frameSize;
 let sandbox = new GlslCanvas(canvas);
-sandbox.load(testFragShader);
+sandbox.load(shaderList[0].program);
+
+document.addEventListener('click', () => {
+    curShaderIndex = (curShaderIndex + 1) % shaderList.length;
+    sandbox.load(shaderList[curShaderIndex].program);
+});
