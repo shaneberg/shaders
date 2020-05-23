@@ -18,7 +18,10 @@ canvas.height = window.innerHeight - frameSize;
 let sandbox = new GlslCanvas(canvas);
 sandbox.load(shaderList[0].program);
 
-document.addEventListener('click', () => {
+let rotateShader = () => {
     curShaderIndex = (curShaderIndex + 1) % shaderList.length;
     sandbox.load(shaderList[curShaderIndex].program);
-});
+};
+
+document.addEventListener('touchend', rotateShader);
+document.addEventListener('click', rotateShader);
