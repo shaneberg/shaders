@@ -1,8 +1,10 @@
 import GlslCanvas from 'glslCanvas';
 import test from './glsl/test.glsl';
 import sine from './glsl/sine.glsl';
+import colormix from './glsl/color-mix.glsl';
 
 let shaderList = [
+    { name: 'Color Mix', program: colormix },
     { name: 'Dev Pink',  program: test },
     { name: 'Sine Wave', program: sine }
 ];
