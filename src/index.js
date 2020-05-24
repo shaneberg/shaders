@@ -2,8 +2,10 @@ import GlslCanvas from 'glslCanvas';
 import test from './glsl/test.glsl';
 import sine from './glsl/sine.glsl';
 import colormix from './glsl/color-mix.glsl';
+import austrian from './glsl/austrian-flag.glsl';
 
 let shaderList = [
+    { name: 'Austrian Flag', program: austrian },
     { name: 'Color Mix', program: colormix },
     { name: 'Dev Pink',  program: test },
     { name: 'Sine Wave', program: sine }
