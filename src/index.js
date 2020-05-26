@@ -3,8 +3,10 @@ import test from './glsl/test.glsl';
 import sine from './glsl/sine.glsl';
 import colormix from './glsl/color-mix.glsl';
 import austrian from './glsl/austrian-flag.glsl';
+import hsb from './glsl/hsb.glsl';
 
 let shaderList = [
+    { name: 'HSB', program: hsb },
     { name: 'Austrian Flag', program: austrian },
     { name: 'Color Mix', program: colormix },
     { name: 'Dev Pink',  program: test },
