@@ -4,8 +4,10 @@ import sine from './glsl/sine.glsl';
 import colormix from './glsl/color-mix.glsl';
 import austrian from './glsl/austrian-flag.glsl';
 import hsb from './glsl/hsb.glsl';
+import polarhsb from './glsl/polar-hsb.glsl';
 
 let shaderList = [
+    { name: 'Polar HSB', program: polarhsb },
     { name: 'HSB', program: hsb },
     { name: 'Austrian Flag', program: austrian },
     { name: 'Color Mix', program: colormix },
