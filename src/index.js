@@ -5,8 +5,10 @@ import colormix from './glsl/color-mix.glsl';
 import austrian from './glsl/austrian-flag.glsl';
 import hsb from './glsl/hsb.glsl';
 import polarhsb from './glsl/polar-hsb.glsl';
+import frame from './glsl/frame-shape.glsl';
 
 let shaderList = [
+    { name: 'Frame', program: frame },
     { name: 'Polar HSB', program: polarhsb },
     { name: 'HSB', program: hsb },
     { name: 'Austrian Flag', program: austrian },
